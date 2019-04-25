@@ -1,4 +1,15 @@
-it630_project
+
+#IT630 final project
+
+
+## Table of contents
+
+- [Project Organization](#folder-structure)
+- [Developer Note](#developer-note)
+- [Creator](#project-creator)
+- [Copyright and license](#copyright-and-license)
+
+==============================
 ==============================
 
 Final project for IT630
@@ -53,5 +64,15 @@ Project Organization
 
 
 --------
+
+## Developer Note
+
+- [Python3](https://docs.python.org/3/)
+- [Anaconda](https://www.anaconda.com/)
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+## Creator
+
+- Andreas Sudarto, Luc Ravenelle
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
