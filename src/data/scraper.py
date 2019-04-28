@@ -5,8 +5,10 @@ import numpy as np
 import pandas as pd
 import re
 
+letter = input("First letter of nba player name: ")
+name = input("Name of nba player, lastname and first two letter of their first: ")
 
-url = "https://www.basketball-reference.com/players/d/duranke01.html"
+url = "https://www.basketball-reference.com/players/{}/{}01.html".format(letter,name)
 response = requests.get(url, headers={'User-Agent': 'Chrome/60.0.3112.113'})
 soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -20,4 +22,4 @@ player_stats = [[td.getText() for td in data_rows[i].findAll(['td','th'])] for i
 
 stats = pd.DataFrame(player_stats, columns = headers)
 stats.head(10)
-stats.to_csv('../../data/raw/durant-data.csv')
+stats.to_csv('../../data/raw/{}.csv'.format(name))
