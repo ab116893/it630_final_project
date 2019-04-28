@@ -5,21 +5,25 @@ library(xts)
 library(fpp2)
 library(forecast)
 
-KDstats <- read.csv("KD.csv", header=TRUE, stringsAsFactors = FALSE)
+KDstats <- read.csv("duranke.csv", header=TRUE, stringsAsFactors = FALSE)
 
 year = (KDstats$year)
 points = (KDstats$PTS)
 assists = (KDstats$AST)
-### change column header ####
+
 fieldgoal = (KDstats$eFG)
 turnover = (KDstats$TOV)
 
 
+KD_ts = ts(KDstats[,31], frequency = 365.25, start = 2007)
+KD_ts
+
+autoplot(KD_ts)
 
 
-train = ts(KDstats[1:7,2])
-test = ts(KDstats[8:10,2])
-
+train = ts(KDstats[1:9,31])
+test = ts(KDstats[10:12,31])
+train
 
 
 
