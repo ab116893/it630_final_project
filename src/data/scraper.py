@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import re
 
-letter = input("First letter of nba player name: ")
-name = input("Name of nba player, lastname and first two letter of their first: ")
+letter = input("First letter of nba player last name: ")
+name = input("Name of nba player, first five letter in last name and first two letter of their first (EX:curryst,duranke) : ")
 
 url = "https://www.basketball-reference.com/players/{}/{}01.html".format(letter,name)
 response = requests.get(url, headers={'User-Agent': 'Chrome/60.0.3112.113'})
