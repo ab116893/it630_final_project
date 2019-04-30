@@ -14,9 +14,9 @@ def data():
         response = requests.get(url, headers={'User-Agent': 'Chrome/60.0.3112.113'})
         soup = BeautifulSoup(response.content, 'html.parser')
         # use findALL() to get the column headers
-        soup.findAll('tr', limit=3)
+        soup.findAll('tr', limit=2)
         # use getText()to extract the text we need into a list
-        headers = [th.getText() for th in soup.findAll('tr', limit=3)[0].findAll('th')]
+        headers = [th.getText() for th in soup.findAll('tr', limit=2)[0].findAll('th')]
         # avoid the first header row
         data_rows = soup.findAll('tr')
         player_stats = [[td.getText() for td in data_rows[i].findAll(['td','th'])] for i in range(len(data_rows))]
@@ -24,6 +24,8 @@ def data():
         stats = pd.DataFrame(player_stats, columns = headers)
         stats.head(10)
         stats.to_csv('../../data/raw/{}.csv'.format(name))
+        print("--------------done scraping---------------")
+
     except:
         print("Invalid input or error on the scraper")
 data()
