@@ -14,10 +14,12 @@ assists = (stats$AST)
 fieldgoal = (stats$eFG)
 turnover = (stats$TOV)
 
+year <- readline("What is the year you want to start from?")  
+
 
 ##### single time series #######
 
-ts = ts(stats[,31], frequency = 1, start = 2007)
+ts = ts(stats[,31], frequency = 1, start = year)
 ts
 
 ######## Drift method and Naive Method #########
